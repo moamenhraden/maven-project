@@ -3,9 +3,6 @@ pipeline {
     tools { 
         maven "mvn3" 
     }
-    docker {
-        sh "docker run hello-world"
-    }
     stages {
         stage("build-stage") {
             steps {
@@ -16,6 +13,11 @@ pipeline {
             steps {
                 sh "mvn test"
             }
+        }
+    }
+    stage ("Docker Test") {
+        steps {
+            sh "docker run hello-world"
         }
     }
     
