@@ -1,25 +1,15 @@
 pipeline {
     agent any 
-    tools { 
-        maven "mvn3" 
-    }
     stages {
-        stage("build-stage") {
+        stage('build stage') {
             steps {
-                sh "mvn compile"
+                sh 'echo "build ..."' 
             }
         }
-        stage("Test-stage") {
+        stage('test stage') {
             steps {
-                sh "mvn test"
-            }
-        }
-
-        stage ("Docker Test") {
-            steps {
-                sh "docker run hello-world"
+                sh 'echo "test ..."' 
             }
         }
     }
-    
 }
