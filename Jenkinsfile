@@ -1,7 +1,10 @@
 pipeline {
     agent any 
     tools { 
-        maven 'mvn3' 
+        maven "mvn3" 
+    }
+    docker {
+        sh "docker run hello-world"
     }
     stages {
         stage("build-stage") {
