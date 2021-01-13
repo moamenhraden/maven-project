@@ -14,10 +14,11 @@ pipeline {
                 sh "mvn test"
             }
         }
-    }
-    stage ("Docker Test") {
-        steps {
-            sh "docker run hello-world"
+
+        stage ("Docker Test") {
+            steps {
+                sh "docker run hello-world"
+            }
         }
     }
     
